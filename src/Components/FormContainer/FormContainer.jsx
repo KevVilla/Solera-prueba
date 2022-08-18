@@ -1,10 +1,19 @@
 import { useEffect } from "react";
 import useServices from "../../Hooks/useServices";
+import useLocalStorage from "../../Hooks/useLocalStorage";
 import ButtonForm from "../ButtonForm/ButtonForm";
 
 const FormContainer = () => {
-  const { servicios, setServicios, setServiciosFilter, servicio, setServicio, editServicio, setEditServicio } =
-    useServices();
+  const {
+    servicios,
+    setServicios,
+    setServiciosFilter,
+    servicio,
+    setServicio,
+    editServicio,
+    setEditServicio,
+  } = useServices();
+  const [serviciosLocal, setServiciosLocal] = useLocalStorage('servicios',[]);
   const handleChange = (ev) => {
     setServicio((prev) => ({
       ...prev,
@@ -15,7 +24,7 @@ const FormContainer = () => {
   const handleCancel = (ev) => {
     ev.preventDefault();
     setServicio({ name: "", description: "" });
-    setEditServicio(prev=>({id:0,edit:false}))
+    setEditServicio((prev) => ({ id: 0, edit: false }));
   };
   const handleSend = (ev) => {
     ev.preventDefault();
@@ -30,14 +39,16 @@ const FormContainer = () => {
       setServicio({ name: "", description: "" });
     } else {
       setServicios((prev) => [...prev, servicio]);
-      setServiciosFilter([...servicios]);
       setServicio({ name: "", description: "" });
     }
   };
-
   useEffect(()=>{
-    setServiciosFilter([...servicios])
-  },[servicios])
+    setServicios([...serviciosLocal])
+  },[])
+  useEffect(() => {
+    setServiciosFilter([...servicios]);
+    setServiciosLocal([...servicios])
+  }, [servicios]);
 
   return (
     <div className="h-2/5 md:h-80 border rounded-md">
