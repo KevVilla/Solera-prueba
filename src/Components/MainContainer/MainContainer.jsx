@@ -5,7 +5,7 @@ import "./MainContainer.css";
 
 const MainContainer = () => {
   return (
-    <div className="main-container overflow-x-hidden w-full h-full py-4 px-10 ">
+    <div className="main-container overflow-x-hidden w-full h-full py-4 px-10">
       <CardsContainer />
       <FormContainer />
     </div>

@@ -40,10 +40,10 @@ const FormContainer = () => {
   },[servicios])
 
   return (
-    <div className="h-3/5 border rounded-md">
+    <div className="h-2/5 md:h-80 border rounded-md">
       <form className="flex flex-col w-full h-full">
         <div className="h-4/5 flex flex-col gap-4 px-10">
-          <h2 className="text-xl font-semibold py-3">Servicio</h2>
+          <h2 className="text-xl font-semibold py-3 md:py-2">Servicio</h2>
           <label htmlFor="name">Nombre</label>
           <input
             className="py-1 px-2 border rounded"

@@ -10,7 +10,7 @@ const CardsContainer = () => {
           <p className="text-4xl font-semibold">NO HAY SERVICIOS REGISTRADOS</p>
         </div>
       )}
-      <div className="grid grid-cols-3 grid-flow-row gap-4">
+      <div className="grid grid-cols-1 grid-flow-row gap-4 md:grid-cols-2 xl:grid-cols-3">
         {serviciosFilter.map((servicio, index) => (
           <Card key={`card-${index}-${servicio.name}`} servicio={servicio} id={index}/>
         ))}
