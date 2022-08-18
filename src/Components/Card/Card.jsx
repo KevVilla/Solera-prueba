@@ -23,7 +23,7 @@ const Card = ({ servicio, id }) => {
   };
 
   return (
-    <div className="flex flex-col w-full h-56 md:h-52 border rounded">
+    <div className="flex flex-col w-full h-52 md:h-56 border rounded">
       <div className="flex flex-col gap-2 h-4/5 px-3">
         <h2 className="text-xl font-semibold py-3 md:py-2">{servicio.name}</h2>
         <p className="text-sm py-3">{servicio.description}</p>

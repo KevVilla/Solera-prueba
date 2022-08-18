@@ -13,5 +13,7 @@
     .main-container{
         display: flex;
         flex-direction: column-reverse;
+        justify-content: space-between;
+        gap:10px;
     }
 }

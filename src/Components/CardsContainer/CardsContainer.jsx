@@ -4,7 +4,7 @@ import useServices from "../../Hooks/useServices";
 const CardsContainer = () => {
   const { serviciosFilter } = useServices();
   return (
-    <div className="h-full w-full overflow-y-auto">
+    <div className="h-2/4 md:h-full w-full overflow-y-auto">
       {serviciosFilter.length === 0 && (
         <div className="w-full h-full bg-slate-100 flex justify-center items-center">
           <p className="text-4xl font-semibold">NO HAY SERVICIOS REGISTRADOS</p>
